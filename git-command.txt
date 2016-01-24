@@ -1,0 +1,27 @@
+#Git Command
+
+#local
+git init #การสร้าง repository
+git add #การเพิ่ม file เข้าไปใน repository
+git commit -m "COMMIT" #การบันทึก version ใหม่ลงใน repository
+git commit --amend -m "New commit message" #แก้ไขการบันทึก version ใหม่
+
+#server
+git clone git@github.com:songojame/tutorial-git.git #ssh// คือ protocal(secured shell port 22)												
+git remote add origin git@github.com:songojame/tutorial-git.git
+git push origin master #การส่งข้อมูลที่ commit แล้ว ไปเก็บไว้ใน server repository
+git pull origin master #การดึงข้อมูลล่าสดจาก server repository มาไว้ที่ local repository
+
+*git fetch origin
+*git diff master origin/master
+git merge
+
+git status #แสดงสถานะ 
+git checkout -b iss00  #แยก branch "iss00" ใหม่  แล้ว checkout ไปที่ branch "iss00"
+หรือ	git branch iss00
+	git checkout iss00
+
+
+
+
+
