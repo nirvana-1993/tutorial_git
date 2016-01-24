@@ -1,0 +1,14 @@
+-- Trianing Git 24/1/2556 
+
+ssh-keygen -t rsa -- สร้าง key ในรูปแบบ rsa
+git config --global user.name "YOUR NAME"
+git config --global user.email "YOUR EMAIL ADDRESS"
+
+-- local
+git init -- การสร้าง repository
+git add -- การเพิ่ม file เข้าไปใน repository
+git commit -m "COMMIT"-- การบันทึก version ใหม่ลงใน repository
+
+-- server
+git push -- การส่งข้อมูลที่ commit แล้ว ไปเก็บไว้ใน server repository
+git pull -- การดึงข้อมูลล่าสดจาก server repository มาไว้ที่ local repo
