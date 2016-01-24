@@ -1,27 +1,47 @@
 #Git Command
 
+git config --global user.name "YOUR NAME"
+git config --global user.email "YOUR EMAIL ADDRESS"
+
 #local
 git init #การสร้าง repository
 git add #การเพิ่ม file เข้าไปใน repository
 git commit -m "COMMIT" #การบันทึก version ใหม่ลงใน repository
 git commit --amend -m "New commit message" #แก้ไขการบันทึก version ใหม่
 
+
 #server
 git clone git@github.com:songojame/tutorial-git.git #ssh// คือ protocal(secured shell port 22)												
 git remote add origin git@github.com:songojame/tutorial-git.git
+git remote update
 git push origin master #การส่งข้อมูลที่ commit แล้ว ไปเก็บไว้ใน server repository
 git pull origin master #การดึงข้อมูลล่าสดจาก server repository มาไว้ที่ local repository
 
-*git fetch origin
+git fetch origin #ดึงค่าที่อัปเดตการเปลี่ยนแปลงจาก server repository มาไว้ที่ local repository
 *git diff master origin/master
-git merge
 
+*stash
+*Fork 
 git status #แสดงสถานะ 
 git checkout -b iss00  #แยก branch "iss00" ใหม่  แล้ว checkout ไปที่ branch "iss00"
-หรือ	git branch iss00
-	git checkout iss00
+git branch iss00
+git checkout master
+git merge iss00
 
+git branch -d iss00
+git log ดูคำสั่งรายการ commit ย้อนหลัง
+#git reset มี 2 แบบ คือ soft และ hard soft จะกลับไปยังตอนที่ยังไม่ แอดไฟล์ ส่วน hard จะลบทุกไฟล์ที่ค้างอยู่ แล้วกลับไป commit ที่ต้องการ
+git reset 
+git reset --hard #reset history ของ local repository ด้วยการ reset แต่ละ commit ใน Git จะมี id เป็นเลข hash ยาวๆ 
+				  #เช่น 29a4c0d0549897bf2dabc90a4f7664de31d4df43 สามารถเรียก 7 ตัวแทนได้ 29a4c0d
 
+git rebase #ในกรณีที่ทำงานเป็นทีมขนานกัน มักจะต้องทำการ "ปรับฐาน" โดยต้องการนำ code จากต่าง brach มาปรับให้เข้ากับ code ที่แก้อยู่ โดยใช้ code จากต่าง branch มาเป็นฐาน
+git merge iss00 --no-ff
+
+#เมื่อมีการเปลี่ยนแปลงเกิดขึ้นใน server repository จะต้องดึงการเปลี่ยนแปลงลงมาก่อน
+git branch -r
+git remote update
+git pull
 
 
 
